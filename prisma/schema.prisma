@@ -1,0 +1,152 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN") // SUPER_ADMIN, ADMIN, EDITOR
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  nameSo        String
+  nameEn        String
+  slug          String    @unique
+  descriptionSo String?
+  descriptionEn String?
+  imageUrl      String?
+  color         String?   @default("#FFC928")
+  order         Int       @default(0)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  articles      Article[]
+}
+
+model Article {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  categoryId    String
+  category      Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  authorName    String    @default("Dailylink Africa Editorial")
+  authorAvatar  String?
+  featuredImage String
+  imageCaption  String?
+  status        String    @default("PUBLISHED") // DRAFT, PUBLISHED, SCHEDULED, ARCHIVED
+  isFeatured    Boolean   @default(false)
+  isBreaking    Boolean   @default(false)
+  isEditorPick  Boolean   @default(false)
+  views         Int       @default(0)
+  publishedAt   DateTime  @default(now())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Somali Content
+  titleSo       String
+  subtitleSo    String?
+  contentSo     String
+
+  // English Content
+  titleEn       String
+  subtitleEn    String?
+  contentEn     String
+
+  readTimeMin   Int       @default(3)
+  videoUrl      String?
+  tags          String?   // comma separated tags
+  articleViews  ArticleView[]
+}
+
+model ArticleView {
+  id        String   @id @default(cuid())
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  viewedAt  DateTime @default(now())
+}
+
+model Media {
+  id         String   @id @default(cuid())
+  name       String
+  url        String
+  fileType   String   // "image/jpeg", "image/png", "video/mp4", etc.
+  sizeBytes  Int      @default(0)
+  width      Int?
+  height     Int?
+  altTextSo  String?
+  altTextEn  String?
+  folder     String   @default("general")
+  createdAt  DateTime @default(now())
+}
+
+model Video {
+  id            String   @id @default(cuid())
+  titleSo       String
+  titleEn       String
+  descriptionSo String?
+  descriptionEn String?
+  youtubeId     String?
+  videoUrl      String
+  thumbnailUrl  String
+  durationSec   Int      @default(0)
+  category      String?
+  isFeatured    Boolean  @default(false)
+  views         Int      @default(0)
+  createdAt     DateTime @default(now())
+}
+
+model PhotoGallery {
+  id            String         @id @default(cuid())
+  titleSo       String
+  titleEn       String
+  descriptionSo String?
+  descriptionEn String?
+  coverImage    String
+  category      String?
+  photographer  String?
+  createdAt     DateTime       @default(now())
+  images        GalleryImage[]
+}
+
+model GalleryImage {
+  id          String       @id @default(cuid())
+  galleryId   String
+  gallery     PhotoGallery @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  imageUrl    String
+  captionSo   String?
+  captionEn   String?
+  order       Int          @default(0)
+}
+
+model WebsiteSettings {
+  id                   String   @id @default("default")
+  siteNameSo           String   @default("Dailylink Africa")
+  siteNameEn           String   @default("Dailylink Africa")
+  taglineSo            String   @default("Ilaha Xogta iyo Wararka Runta ah ee Bariga Afrika iyo Caalamka")
+  taglineEn            String   @default("Your Trusted Source for African & Global News")
+  logoUrl              String?
+  breakingNewsEnabled  Boolean  @default(true)
+  breakingCustomTextSo String?
+  breakingCustomTextEn String?
+  contactEmail         String   @default("contact@dailylink.africa")
+  contactPhone         String?  @default("+252 61 000 0000")
+  twitterUrl           String?  @default("https://twitter.com/dailylinkafrica")
+  facebookUrl          String?  @default("https://facebook.com/dailylinkafrica")
+  youtubeUrl           String?  @default("https://youtube.com/@dailylinkafrica")
+  telegramUrl          String?  @default("https://t.me/dailylinkafrica")
+  instagramUrl         String?  @default("https://instagram.com/dailylinkafrica")
+  defaultLanguage      String   @default("so")
+  updatedAt            DateTime @updatedAt
+}
+
