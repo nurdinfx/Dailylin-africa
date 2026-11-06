@@ -153,7 +153,7 @@ export default function AdminGalleriesPage() {
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
+            className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
           >
             <Plus className="w-4 h-4" />
             <span>Create Photo Gallery</span>
@@ -260,7 +260,7 @@ export default function AdminGalleriesPage() {
                       type="button"
                       onClick={() => galleryFilesRef.current?.click()}
                       disabled={uploadingPhotos}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FFC928] text-black font-bold text-[11px] shadow-sm hover:bg-[#E5B420] transition-colors"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0084FF] text-white font-bold text-[11px] shadow-sm hover:bg-[#006ED6] transition-colors"
                     >
                       {uploadingPhotos ? (
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -319,7 +319,7 @@ export default function AdminGalleriesPage() {
                 <div className="flex items-center gap-2 pt-2">
                   <button
                     type="submit"
-                    className="flex-1 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
+                    className="flex-1 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
                   >
                     Save Photo Gallery
                   </button>

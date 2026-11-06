@@ -98,7 +98,7 @@ export default function LightboxModal({
               e.stopPropagation();
               handlePrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#FFC928] text-white hover:text-black transition-colors z-20 shadow-lg"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#0084FF] text-white hover:text-white transition-colors z-20 shadow-lg"
             aria-label="Previous Image"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -109,7 +109,7 @@ export default function LightboxModal({
               e.stopPropagation();
               handleNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#FFC928] text-white hover:text-black transition-colors z-20 shadow-lg"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#0084FF] text-white hover:text-white transition-colors z-20 shadow-lg"
             aria-label="Next Image"
           >
             <ChevronRight className="w-6 h-6" />

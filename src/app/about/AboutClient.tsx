@@ -11,7 +11,7 @@ export default function AboutClient() {
     <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12">
       {/* Hero Header */}
       <div className="text-center max-w-3xl mx-auto">
-        <span className="text-xs font-black uppercase tracking-widest text-[#D97706] dark:text-[#FFC928] block mb-2">
+        <span className="text-xs font-black uppercase tracking-widest text-[#0084FF] dark:text-[#38BDF8] block mb-2">
           {language === 'so' ? 'Hadafka iyo Qiyamka' : 'Our Mission & Editorial Standard'}
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
@@ -29,7 +29,7 @@ export default function AboutClient() {
       {/* Core Values Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928] text-black flex items-center justify-center font-bold mb-4 shadow">
+          <div className="w-10 h-10 rounded-xl bg-[#0084FF] text-white flex items-center justify-center font-bold mb-4 shadow">
             <Shield className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">
@@ -43,7 +43,7 @@ export default function AboutClient() {
         </div>
 
         <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800">
-          <div className="w-10 h-10 rounded-xl bg-black text-[#FFC928] flex items-center justify-center font-bold mb-4 shadow border border-[#FFC928]">
+          <div className="w-10 h-10 rounded-xl bg-[#002B66] text-[#38BDF8] flex items-center justify-center font-bold mb-4 shadow border border-[#0084FF]/40">
             <Target className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">
@@ -57,7 +57,7 @@ export default function AboutClient() {
         </div>
 
         <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928] text-black flex items-center justify-center font-bold mb-4 shadow">
+          <div className="w-10 h-10 rounded-xl bg-[#0084FF] text-white flex items-center justify-center font-bold mb-4 shadow">
             <Users className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">

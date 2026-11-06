@@ -102,7 +102,7 @@ export default function AdminVideosPage() {
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
+            className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
           >
             <Plus className="w-4 h-4" />
             <span>Publish New Video</span>
@@ -130,12 +130,12 @@ export default function AdminVideosPage() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-[#FFC928] text-black flex items-center justify-center shadow-lg">
+                  <div className="w-10 h-10 rounded-full bg-[#0084FF] text-white flex items-center justify-center shadow-lg">
                     <Play className="w-5 h-5 fill-black translate-x-0.5" />
                   </div>
                 </div>
                 {vid.category && (
-                  <span className="absolute top-2.5 left-2.5 bg-black/80 text-[#FFC928] text-[10px] font-bold uppercase px-2 py-0.5 rounded">
+                  <span className="absolute top-2.5 left-2.5 bg-black/80 text-[#0084FF] text-[10px] font-bold uppercase px-2 py-0.5 rounded">
                     {vid.category}
                   </span>
                 )}
@@ -246,7 +246,7 @@ export default function AdminVideosPage() {
                 <div className="flex items-center gap-2 pt-2">
                   <button
                     type="submit"
-                    className="flex-1 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
+                    className="flex-1 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
                   >
                     Publish Video
                   </button>

@@ -100,7 +100,7 @@ export default function AdminArticlesPage() {
 
           <Link
             href="/admin/articles/create"
-            className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
+            className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-md self-start sm:self-auto"
           >
             <Plus className="w-4 h-4" />
             <span>Create New Article</span>
@@ -168,7 +168,7 @@ export default function AdminArticlesPage() {
         <div className="rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm overflow-hidden">
           {loading ? (
             <div className="p-12 text-center text-zinc-400 text-sm">
-              <div className="w-6 h-6 border-2 border-[#FFC928] border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+              <div className="w-6 h-6 border-2 border-[#0084FF] border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
               <span>Loading articles...</span>
             </div>
           ) : articles.length === 0 ? (
@@ -244,7 +244,7 @@ export default function AdminArticlesPage() {
                           onClick={() => toggleFlag(art.id, 'isBreaking', art.isBreaking)}
                           className={`p-1.5 rounded-lg border transition-colors ${
                             art.isBreaking
-                              ? 'bg-black text-[#FFC928] border-[#FFC928]'
+                              ? 'bg-black text-[#0084FF] border-[#0084FF]'
                               : 'text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-zinc-400'
                           }`}
                           title="Toggle Breaking News"
@@ -259,7 +259,7 @@ export default function AdminArticlesPage() {
                           onClick={() => toggleFlag(art.id, 'isFeatured', art.isFeatured)}
                           className={`p-1.5 rounded-lg border transition-colors ${
                             art.isFeatured
-                              ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-[#FFC928] border-amber-400'
+                              ? 'bg-blue-100 dark:bg-[#002B66]/80 text-[#0084FF] dark:text-[#38BDF8] border-blue-400'
                               : 'text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-zinc-400'
                           }`}
                           title="Toggle Lead Featured Story"

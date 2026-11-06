@@ -165,7 +165,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         <div className="max-h-[60vh] overflow-y-auto p-4 sm:p-6 space-y-4">
           {loading && (
             <div className="flex items-center justify-center py-8 text-zinc-400 text-sm">
-              <div className="w-5 h-5 border-2 border-[#FFC928] border-t-transparent rounded-full animate-spin mr-2"></div>
+              <div className="w-5 h-5 border-2 border-[#0084FF] border-t-transparent rounded-full animate-spin mr-2"></div>
               <span>{t.loading}</span>
             </div>
           )}
@@ -188,12 +188,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       key={art.id}
                       type="button"
                       onClick={() => handleSelectArticle(art.slug)}
-                      className="w-full text-left p-3 rounded-xl hover:bg-amber-50 dark:hover:bg-zinc-800/80 flex items-center justify-between group transition-colors"
+                      className="w-full text-left p-3 rounded-xl hover:bg-sky-50 dark:hover:bg-zinc-800/80 flex items-center justify-between group transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <BookOpen className="w-4 h-4 text-[#FFC928] shrink-0" />
+                        <BookOpen className="w-4 h-4 text-[#0084FF] shrink-0" />
                         <div>
-                          <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 group-hover:text-amber-800 dark:group-hover:text-[#FFC928]">
+                          <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8]">
                             {title}
                           </p>
                           {catName && (
@@ -203,7 +203,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                           )}
                         </div>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-[#FFC928] group-hover:translate-x-1 transition-transform shrink-0" />
+                      <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-[#0084FF] group-hover:translate-x-1 transition-transform shrink-0" />
                     </button>
                   );
                 })}
@@ -213,7 +213,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <button
                   type="button"
                   onClick={handleFullSearch}
-                  className="text-xs font-bold text-amber-700 dark:text-[#FFC928] hover:underline"
+                  className="text-xs font-bold text-[#0084FF] dark:text-[#38BDF8] hover:underline"
                 >
                   {language === 'so' ? 'Arag dhammaan natiijooyinka →' : 'View all search results →'}
                 </button>
@@ -253,7 +253,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     onClick={() => {
                       setQuery(s);
                     }}
-                    className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-[#FFC928] hover:text-black transition-colors"
+                    className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-[#0084FF] hover:text-white transition-colors"
                   >
                     {s}
                   </button>
@@ -266,7 +266,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
           {!query && (
             <div className="pt-2 px-2">
               <span className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5 mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#FFC928]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#0084FF]" />
                 {language === 'so' ? 'Mowduucyada Taagan' : 'Trending Topics'}
               </span>
               <div className="flex flex-wrap gap-2">
@@ -276,7 +276,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       key={topic}
                       type="button"
                       onClick={() => setQuery(topic)}
-                      className="px-3 py-1 rounded-full text-xs font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-[#FFC928] border border-transparent transition-all"
+                      className="px-3 py-1 rounded-full text-xs font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-[#0084FF] border border-transparent transition-all"
                     >
                       #{topic}
                     </button>

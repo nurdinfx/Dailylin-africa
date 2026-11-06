@@ -23,14 +23,14 @@ export default function CategoryHeaderClient({ category, count }: { category: an
           {t.categories}
         </span>
         <ChevronRight className="w-3.5 h-3.5 opacity-50" />
-        <span className="text-[#D97706] dark:text-[#FFC928] font-bold">
+        <span className="text-[#0084FF] dark:text-[#38BDF8] font-bold">
           {title}
         </span>
       </nav>
 
       <div className="flex items-center gap-3">
         <span
-          style={{ backgroundColor: category.color || '#FFC928' }}
+          style={{ backgroundColor: category.color || '#0084FF' }}
           className="w-3 h-8 rounded-sm shrink-0"
         />
         <h1 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">

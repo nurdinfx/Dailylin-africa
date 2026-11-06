@@ -76,15 +76,23 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Save locally to public/uploads
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-    await mkdir(uploadDir, { recursive: true });
+    let publicUrl = '';
+    try {
+      // Try saving locally to public/uploads
+      const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+      await mkdir(uploadDir, { recursive: true });
 
-    const safeName = `${Date.now()}-${file.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-    const filePath = path.join(uploadDir, safeName);
-    await writeFile(filePath, buffer);
+      const safeName = `${Date.now()}-${file.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+      const filePath = path.join(uploadDir, safeName);
+      await writeFile(filePath, buffer);
 
-    const publicUrl = `/uploads/${safeName}`;
+      publicUrl = `/uploads/${safeName}`;
+    } catch (fsError) {
+      console.warn('Filesystem read-only or unavailable (e.g. serverless). Falling back to data URI:', fsError);
+      const mime = file.type || 'image/jpeg';
+      const base64 = buffer.toString('base64');
+      publicUrl = `data:${mime};base64,${base64}`;
+    }
 
     const media = await prisma.media.create({
       data: {

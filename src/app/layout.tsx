@@ -40,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="so" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col bg-white dark:bg-[#101010] text-[#111111] dark:text-[#FFFFFF] antialiased selection:bg-[#FFC928] selection:text-black">
+      <body className="min-h-screen flex flex-col bg-white dark:bg-[#101010] text-[#111111] dark:text-[#FFFFFF] antialiased selection:bg-[#0084FF] selection:text-white">
         <ThemeProvider>
           <LanguageProvider>
             {children}

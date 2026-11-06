@@ -69,7 +69,7 @@ export default function AdminDashboardPage() {
     return (
       <AdminLayout>
         <div className="flex items-center justify-center min-h-[50vh]">
-          <div className="w-8 h-8 border-4 border-[#FFC928] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-[#0084FF] border-t-transparent rounded-full animate-spin"></div>
         </div>
       </AdminLayout>
     );
@@ -147,7 +147,7 @@ export default function AdminDashboardPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/admin/articles/create"
-              className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-md"
+              className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-md"
             >
               <Plus className="w-4 h-4" />
               <span>Compose Story</span>
@@ -187,7 +187,7 @@ export default function AdminDashboardPage() {
         <div className="p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-[#FFC928]" />
+              <TrendingUp className="w-5 h-5 text-[#0084FF]" />
               <h2 className="font-black text-base uppercase tracking-tight text-zinc-900 dark:text-white">
                 Readership & Engagement Trend
               </h2>
@@ -212,7 +212,7 @@ export default function AdminDashboardPage() {
                 </span>
                 <div
                   style={{ height: item.height }}
-                  className="w-full bg-zinc-200 dark:bg-zinc-800 group-hover:bg-[#FFC928] rounded-t-lg transition-all duration-300 relative"
+                  className="w-full bg-zinc-200 dark:bg-zinc-800 group-hover:bg-[#0084FF] rounded-t-lg transition-all duration-300 relative"
                 />
                 <span className="text-xs font-semibold text-zinc-500">{item.day}</span>
               </div>
@@ -226,10 +226,10 @@ export default function AdminDashboardPage() {
           <div className="p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm">
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-zinc-100 dark:border-zinc-800">
               <h3 className="font-bold text-sm uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#FFC928]" />
+                <Sparkles className="w-4 h-4 text-[#0084FF]" />
                 Top Performing Articles
               </h3>
-              <Link href="/admin/articles" className="text-xs font-bold text-[#D97706] dark:text-[#FFC928] hover:underline">
+              <Link href="/admin/articles" className="text-xs font-bold text-[#0084FF] dark:text-[#38BDF8] hover:underline">
                 View All
               </Link>
             </div>
@@ -245,7 +245,7 @@ export default function AdminDashboardPage() {
                       <Link
                         href={`/articles/${art.slug}`}
                         target="_blank"
-                        className="text-sm font-bold text-zinc-800 dark:text-zinc-200 hover:text-[#D97706] dark:hover:text-[#FFC928] transition-colors truncate block"
+                        className="text-sm font-bold text-zinc-800 dark:text-zinc-200 hover:text-[#0084FF] dark:hover:text-[#38BDF8] transition-colors truncate block"
                       >
                         {art.titleEn || art.titleSo}
                       </Link>
@@ -255,7 +255,7 @@ export default function AdminDashboardPage() {
                     </div>
                   </div>
 
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-900 dark:text-[#FFC928] shrink-0">
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-[#002B66]/60 text-[#0084FF] dark:text-[#38BDF8] shrink-0">
                     {(art.views ?? 0).toLocaleString()} views
                   </span>
                 </div>
@@ -270,7 +270,7 @@ export default function AdminDashboardPage() {
                 <Clock className="w-4 h-4 text-zinc-400" />
                 Recent Publishing Activity
               </h3>
-              <Link href="/admin/articles" className="text-xs font-bold text-[#D97706] dark:text-[#FFC928] hover:underline">
+              <Link href="/admin/articles" className="text-xs font-bold text-[#0084FF] dark:text-[#38BDF8] hover:underline">
                 Manage
               </Link>
             </div>
@@ -281,7 +281,7 @@ export default function AdminDashboardPage() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
                       {art.isBreaking && (
-                        <span className="text-[9px] font-black uppercase px-1.5 py-0.5 bg-black text-[#FFC928] rounded">
+                        <span className="text-[9px] font-black uppercase px-1.5 py-0.5 bg-black text-[#0084FF] rounded">
                           BREAKING
                         </span>
                       )}
@@ -291,7 +291,7 @@ export default function AdminDashboardPage() {
                     </div>
                     <Link
                       href={`/admin/articles/${art.id}/edit`}
-                      className="text-sm font-bold text-zinc-800 dark:text-zinc-200 hover:text-[#D97706] dark:hover:text-[#FFC928] transition-colors truncate block"
+                      className="text-sm font-bold text-zinc-800 dark:text-zinc-200 hover:text-[#0084FF] dark:hover:text-[#38BDF8] transition-colors truncate block"
                     >
                       {art.titleEn || art.titleSo}
                     </Link>

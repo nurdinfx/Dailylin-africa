@@ -47,7 +47,7 @@ export default function AdminSettingsPage() {
     return (
       <AdminLayout>
         <div className="flex items-center justify-center min-h-[50vh]">
-          <div className="w-8 h-8 border-4 border-[#FFC928] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-[#0084FF] border-t-transparent rounded-full animate-spin"></div>
         </div>
       </AdminLayout>
     );
@@ -77,7 +77,7 @@ export default function AdminSettingsPage() {
           <div className="p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-zinc-100 dark:border-zinc-800">
               <div className="flex items-center gap-2">
-                <Flame className="w-5 h-5 text-[#FFC928]" />
+                <Flame className="w-5 h-5 text-[#0084FF]" />
                 <h3 className="font-bold text-sm uppercase tracking-wider text-zinc-900 dark:text-white">
                   Breaking News Ticker Banner
                 </h3>
@@ -87,7 +87,7 @@ export default function AdminSettingsPage() {
                   type="checkbox"
                   checked={settings.breakingNewsEnabled}
                   onChange={(e) => setSettings({ ...settings, breakingNewsEnabled: e.target.checked })}
-                  className="w-4 h-4 rounded text-[#FFC928] focus:ring-0"
+                  className="w-4 h-4 rounded text-[#0084FF] focus:ring-0"
                 />
                 <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">
                   {settings.breakingNewsEnabled ? 'Enabled' : 'Disabled'}
@@ -127,7 +127,7 @@ export default function AdminSettingsPage() {
           {/* Brand Identity & Taglines */}
           <div className="p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4">
             <h3 className="font-bold text-sm uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-2 pb-3 border-b border-zinc-100 dark:border-zinc-800">
-              <Globe className="w-4 h-4 text-[#FFC928]" />
+              <Globe className="w-4 h-4 text-[#0084FF]" />
               Brand Identity & Multilingual Taglines
             </h3>
 
@@ -188,7 +188,7 @@ export default function AdminSettingsPage() {
           {/* Contact & Social Links */}
           <div className="p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4">
             <h3 className="font-bold text-sm uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-2 pb-3 border-b border-zinc-100 dark:border-zinc-800">
-              <Share2 className="w-4 h-4 text-[#FFC928]" />
+              <Share2 className="w-4 h-4 text-[#0084FF]" />
               Newsroom Contacts & Official Social Profiles
             </h3>
 
@@ -257,7 +257,7 @@ export default function AdminSettingsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-6 py-3 rounded-xl text-xs transition-colors shadow-md"
+            className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-6 py-3 rounded-xl text-xs transition-colors shadow-md"
           >
             <Save className="w-4 h-4" />
             <span>{saving ? 'Saving...' : 'Save Website Settings'}</span>

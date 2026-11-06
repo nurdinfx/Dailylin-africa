@@ -57,7 +57,7 @@ export default function ArticleForm({
   const [formData, setFormData] = useState<ArticleFormData>(
     initialData || {
       categoryId: categories[0]?.id || '',
-      featuredImage: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80',
+      featuredImage: '',
       imageCaption: '',
       status: 'PUBLISHED',
       isFeatured: false,
@@ -178,10 +178,15 @@ export default function ArticleForm({
       const url = isEditing ? `/api/articles/${initialData?.id}` : '/api/articles';
       const method = isEditing ? 'PUT' : 'POST';
 
+      const payload = {
+        ...formData,
+        featuredImage: formData.featuredImage?.trim() || '/logo.png',
+      };
+
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -237,7 +242,7 @@ export default function ArticleForm({
             onClick={() => setActiveTab('so')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               activeTab === 'so'
-                ? 'bg-[#FFC928] text-black shadow-md'
+                ? 'bg-[#0084FF] text-white shadow-md'
                 : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
             }`}
           >
@@ -248,7 +253,7 @@ export default function ArticleForm({
             onClick={() => setActiveTab('en')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               activeTab === 'en'
-                ? 'bg-[#FFC928] text-black shadow-md'
+                ? 'bg-[#0084FF] text-white shadow-md'
                 : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
             }`}
           >
@@ -306,7 +311,7 @@ export default function ArticleForm({
                   value={formData.titleSo}
                   onChange={(e) => setFormData({ ...formData, titleSo: e.target.value })}
                   placeholder="Gali ciwaanka rasmiga ah ee maqaalka..."
-                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white font-bold text-lg sm:text-xl focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white font-bold text-lg sm:text-xl focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -319,7 +324,7 @@ export default function ArticleForm({
                   value={formData.subtitleSo || ''}
                   onChange={(e) => setFormData({ ...formData, subtitleSo: e.target.value })}
                   placeholder="Hordhac kooban oo soo koobaya nuxurka sheekada..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-sm focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-sm focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -349,7 +354,7 @@ export default function ArticleForm({
                   value={formData.titleEn}
                   onChange={(e) => setFormData({ ...formData, titleEn: e.target.value })}
                   placeholder="Enter official English news headline..."
-                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white font-bold text-lg sm:text-xl focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white font-bold text-lg sm:text-xl focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -362,7 +367,7 @@ export default function ArticleForm({
                   value={formData.subtitleEn || ''}
                   onChange={(e) => setFormData({ ...formData, subtitleEn: e.target.value })}
                   placeholder="A concise lead sentence highlighting key development..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-sm focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-sm focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -429,10 +434,10 @@ export default function ArticleForm({
                   type="checkbox"
                   checked={formData.isBreaking}
                   onChange={(e) => setFormData({ ...formData, isBreaking: e.target.checked })}
-                  className="w-4 h-4 rounded text-[#FFC928] focus:ring-0"
+                  className="w-4 h-4 rounded text-[#0084FF] focus:ring-0"
                 />
                 <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
-                  <Flame className="w-3.5 h-3.5 text-[#FFC928]" />
+                  <Flame className="w-3.5 h-3.5 text-[#0084FF]" />
                   Mark as Breaking News
                 </span>
               </label>
@@ -442,10 +447,10 @@ export default function ArticleForm({
                   type="checkbox"
                   checked={formData.isFeatured}
                   onChange={(e) => setFormData({ ...formData, isFeatured: e.target.checked })}
-                  className="w-4 h-4 rounded text-[#FFC928] focus:ring-0"
+                  className="w-4 h-4 rounded text-[#0084FF] focus:ring-0"
                 />
                 <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
-                  <Star className="w-3.5 h-3.5 text-amber-500" />
+                  <Star className="w-3.5 h-3.5 text-[#0084FF]" />
                   Lead Featured Story
                 </span>
               </label>
@@ -455,7 +460,7 @@ export default function ArticleForm({
                   type="checkbox"
                   checked={formData.isEditorPick}
                   onChange={(e) => setFormData({ ...formData, isEditorPick: e.target.checked })}
-                  className="w-4 h-4 rounded text-[#FFC928] focus:ring-0"
+                  className="w-4 h-4 rounded text-[#0084FF] focus:ring-0"
                 />
                 <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">
                   Editor's Choice
@@ -466,7 +471,7 @@ export default function ArticleForm({
             <button
               type="submit"
               disabled={saving}
-              className="w-full mt-4 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-3 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full mt-4 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-3 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {saving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

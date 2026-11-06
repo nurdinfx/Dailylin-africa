@@ -24,7 +24,7 @@ export default function CreateArticlePage() {
     return (
       <AdminLayout>
         <div className="flex items-center justify-center min-h-[50vh]">
-          <div className="w-8 h-8 border-4 border-[#FFC928] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-[#0084FF] border-t-transparent rounded-full animate-spin"></div>
         </div>
       </AdminLayout>
     );
@@ -36,7 +36,7 @@ export default function CreateArticlePage() {
         <div className="flex items-center gap-3">
           <Link
             href="/admin/articles"
-            className="p-2 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 hover:border-[#FFC928] transition-colors"
+            className="p-2 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 hover:border-[#0084FF] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>

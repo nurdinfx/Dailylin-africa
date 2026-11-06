@@ -20,9 +20,9 @@ export default function VideosClient({ videos }: { videos: any[] }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8">
       <div className="flex items-center gap-3 mb-2">
-        <span className="w-2.5 h-7 bg-[#FFC928] rounded-sm"></span>
+        <span className="w-2.5 h-7 bg-[#0084FF] rounded-sm"></span>
         <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-900 dark:text-white flex items-center gap-2">
-          <VideoIcon className="w-7 h-7 text-[#FFC928]" />
+          <VideoIcon className="w-7 h-7 text-[#0084FF] dark:text-[#38BDF8]" />
           {t.videos}
         </h1>
       </div>
@@ -44,20 +44,20 @@ export default function VideosClient({ videos }: { videos: any[] }) {
             >
               <div className="relative h-52 bg-black overflow-hidden">
                 <Image
-                  src={vid.thumbnailUrl}
+                  src={vid.thumbnailUrl?.trim() ? vid.thumbnailUrl : '/logo.png'}
                   alt={title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-[#FFC928] text-black flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-black translate-x-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-[#0084FF] text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#006ED6] transition-all">
+                    <Play className="w-5 h-5 fill-white translate-x-0.5" />
                   </div>
                 </div>
 
                 {vid.category && (
-                  <span className="absolute top-3 left-3 bg-black/80 backdrop-blur text-[#FFC928] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded">
+                  <span className="absolute top-3 left-3 bg-[#002B66]/80 backdrop-blur text-[#38BDF8] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded border border-[#0084FF]/30">
                     {vid.category}
                   </span>
                 )}
@@ -69,7 +69,7 @@ export default function VideosClient({ videos }: { videos: any[] }) {
 
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-base text-zinc-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-[#FFC928] transition-colors leading-snug line-clamp-2">
+                  <h3 className="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] transition-colors leading-snug line-clamp-2">
                     {title}
                   </h3>
                   {desc && (
@@ -84,7 +84,7 @@ export default function VideosClient({ videos }: { videos: any[] }) {
                     <Eye className="w-3.5 h-3.5" />
                     {vid.views || 1400} {language === 'so' ? 'daawo' : 'views'}
                   </span>
-                  <span className="text-amber-800 dark:text-[#FFC928] font-bold">
+                  <span className="text-[#0084FF] dark:text-[#38BDF8] font-bold">
                     {t.watchVideo} →
                   </span>
                 </div>

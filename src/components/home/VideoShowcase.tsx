@@ -47,9 +47,9 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2.5 h-6 bg-[#FFC928] rounded-sm"></span>
+              <span className="w-2.5 h-6 bg-[#0084FF] rounded-sm"></span>
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white flex items-center gap-2">
-                <VideoIcon className="w-6 h-6 text-[#FFC928]" />
+                <VideoIcon className="w-6 h-6 text-[#0084FF]" />
                 {t.multimediaShowcase}
               </h2>
             </div>
@@ -60,7 +60,7 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
 
           <Link
             href="/videos"
-            className="text-xs font-bold uppercase tracking-wider text-[#FFC928] hover:underline flex items-center gap-1 self-start sm:self-auto"
+            className="text-xs font-bold uppercase tracking-wider text-[#38BDF8] hover:underline flex items-center gap-1 self-start sm:self-auto"
           >
             <span>{language === 'so' ? 'Dhammaan Muuqaallada' : 'All Videos'}</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -76,7 +76,7 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
               className="group relative w-full h-[280px] sm:h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-2xl bg-black border border-zinc-800"
             >
               <Image
-                src={leadVideo.thumbnailUrl}
+                src={leadVideo.thumbnailUrl?.trim() ? leadVideo.thumbnailUrl : '/logo.png'}
                 alt={language === 'so' ? leadVideo.titleSo : leadVideo.titleEn}
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -86,26 +86,26 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
 
               {/* Big Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FFC928] text-black flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 fill-black translate-x-0.5" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0084FF] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#006ED6] transition-all">
+                  <Play className="w-8 h-8 fill-white translate-x-0.5" />
                 </div>
               </div>
 
               {/* Badges & Meta */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 {leadVideo.category && (
-                  <span className="bg-black/80 backdrop-blur-md text-[#FFC928] text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#FFC928]/30">
+                  <span className="bg-[#002B66]/80 backdrop-blur-md text-[#38BDF8] text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#0084FF]/40">
                     {leadVideo.category}
                   </span>
                 )}
                 <span className="bg-black/80 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-[#FFC928]" />
+                  <Clock className="w-3 h-3 text-[#38BDF8]" />
                   {formatDuration(leadVideo.durationSec)}
                 </span>
               </div>
 
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#FFC928] transition-colors leading-tight">
+                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#38BDF8] transition-colors leading-tight">
                   {language === 'so' ? leadVideo.titleSo : leadVideo.titleEn}
                 </h3>
                 {(language === 'so' ? leadVideo.descriptionSo : leadVideo.descriptionEn) && (
@@ -129,15 +129,15 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
                 >
                   <div className="relative w-32 h-20 shrink-0 rounded-lg overflow-hidden bg-black">
                     <Image
-                      src={vid.thumbnailUrl}
+                      src={vid.thumbnailUrl?.trim() ? vid.thumbnailUrl : '/logo.png'}
                       alt={title}
                       fill
                       sizes="140px"
                       className="object-cover group-hover:scale-105 transition-transform"
                     />
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-[#FFC928]/90 text-black flex items-center justify-center">
-                        <Play className="w-4 h-4 fill-black translate-x-0.5" />
+                      <div className="w-8 h-8 rounded-full bg-[#0084FF]/90 text-white flex items-center justify-center">
+                        <Play className="w-4 h-4 fill-white translate-x-0.5" />
                       </div>
                     </div>
                     <span className="absolute bottom-1 right-1 bg-black/80 text-[10px] px-1.5 py-0.5 rounded text-white font-mono">
@@ -147,11 +147,11 @@ export default function VideoShowcase({ videos }: VideoShowcaseProps) {
 
                   <div className="flex-1 min-w-0">
                     {vid.category && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#FFC928]">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#38BDF8]">
                         {vid.category}
                       </span>
                     )}
-                    <h4 className="text-sm font-bold text-white group-hover:text-[#FFC928] transition-colors line-clamp-2 mt-0.5 leading-snug">
+                    <h4 className="text-sm font-bold text-white group-hover:text-[#38BDF8] transition-colors line-clamp-2 mt-0.5 leading-snug">
                       {title}
                     </h4>
                     <span className="text-[11px] text-zinc-400 mt-1 block">

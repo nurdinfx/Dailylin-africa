@@ -10,16 +10,18 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          yellow: '#FFC928',
-          yellowHover: '#E5B420',
+          blue: '#0084FF',
+          blueHover: '#006ED6',
+          navy: '#002B66',
+          lightBlue: '#38BDF8',
           dark: '#111111',
           darkBg: '#101010',
           darkCard: '#1B1B1B',
           darkBorder: '#282828',
-          lightBg: '#F5F5F5',
-          lightBorder: '#E5E5E5',
-          textMuted: '#666666',
-          darkTextMuted: '#9E9E9E',
+          lightBg: '#F8FAFC',
+          lightBorder: '#E2E8F0',
+          textMuted: '#64748B',
+          darkTextMuted: '#94A3B8',
         },
       },
       fontFamily: {

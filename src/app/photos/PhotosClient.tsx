@@ -21,9 +21,9 @@ export default function PhotosClient({ galleries }: { galleries: any[] }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8">
       <div className="flex items-center gap-3 mb-2">
-        <span className="w-2.5 h-7 bg-[#FFC928] rounded-sm"></span>
+        <span className="w-2.5 h-7 bg-[#0084FF] rounded-sm"></span>
         <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-900 dark:text-white flex items-center gap-2">
-          <Camera className="w-7 h-7 text-[#FFC928]" />
+          <Camera className="w-7 h-7 text-[#0084FF] dark:text-[#38BDF8]" />
           {t.photoGalleries}
         </h1>
       </div>
@@ -45,7 +45,7 @@ export default function PhotosClient({ galleries }: { galleries: any[] }) {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                 <div>
                   {gal.category && (
-                    <span className="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-[#FFC928]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#0084FF] dark:text-[#38BDF8]">
                       {gal.category}
                     </span>
                   )}
@@ -67,7 +67,7 @@ export default function PhotosClient({ galleries }: { galleries: any[] }) {
                 <button
                   type="button"
                   onClick={() => handleOpenPhoto(gal, 0)}
-                  className="inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-sm self-start md:self-auto shrink-0"
+                  className="inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shadow-sm self-start md:self-auto shrink-0"
                 >
                   <Eye className="w-4 h-4" />
                   <span>
@@ -85,7 +85,7 @@ export default function PhotosClient({ galleries }: { galleries: any[] }) {
                     className="group relative h-48 sm:h-64 rounded-xl overflow-hidden cursor-pointer bg-zinc-200 dark:bg-zinc-800 shadow"
                   >
                     <Image
-                      src={img.imageUrl}
+                      src={img.imageUrl?.trim() ? img.imageUrl : '/logo.png'}
                       alt={language === 'so' ? img.captionSo || '' : img.captionEn || ''}
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"

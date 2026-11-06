@@ -15,7 +15,7 @@ export default function AdminCategoriesPage() {
     slug: '',
     descriptionSo: '',
     descriptionEn: '',
-    color: '#FFC928',
+    color: '#0084FF',
     order: 0,
   });
 
@@ -57,7 +57,7 @@ export default function AdminCategoriesPage() {
           slug: '',
           descriptionSo: '',
           descriptionEn: '',
-          color: '#FFC928',
+          color: '#0084FF',
           order: 0,
         });
         setEditingCategory(null);
@@ -77,7 +77,7 @@ export default function AdminCategoriesPage() {
       slug: cat.slug,
       descriptionSo: cat.descriptionSo || '',
       descriptionEn: cat.descriptionEn || '',
-      color: cat.color || '#FFC928',
+      color: cat.color || '#0084FF',
       order: cat.order || 0,
     });
   };
@@ -122,7 +122,7 @@ export default function AdminCategoriesPage() {
           {/* Create / Edit Form (5 cols) */}
           <div className="lg:col-span-5 p-6 rounded-2xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 shadow-sm">
             <h2 className="text-base font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-              <FolderKanban className="w-4 h-4 text-[#FFC928]" />
+              <FolderKanban className="w-4 h-4 text-[#0084FF]" />
               <span>{editingCategory ? 'Edit Category' : 'Create New Category'}</span>
             </h2>
 
@@ -137,7 +137,7 @@ export default function AdminCategoriesPage() {
                   value={formData.nameSo}
                   onChange={(e) => setFormData({ ...formData, nameSo: e.target.value })}
                   placeholder="e.g. Siyaasadda, Tiknoolajiyadda"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -151,7 +151,7 @@ export default function AdminCategoriesPage() {
                   value={formData.nameEn}
                   onChange={(e) => setFormData({ ...formData, nameEn: e.target.value })}
                   placeholder="e.g. Politics, Technology"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
                 />
               </div>
 
@@ -196,7 +196,7 @@ export default function AdminCategoriesPage() {
               <div className="pt-2 flex items-center gap-2">
                 <button
                   type="submit"
-                  className="flex-1 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
+                  className="flex-1 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-2.5 rounded-xl text-xs transition-colors shadow-md"
                 >
                   {editingCategory ? 'Update Category' : 'Save Category'}
                 </button>
@@ -211,7 +211,7 @@ export default function AdminCategoriesPage() {
                         slug: '',
                         descriptionSo: '',
                         descriptionEn: '',
-                        color: '#FFC928',
+                        color: '#0084FF',
                         order: 0,
                       });
                     }}
@@ -238,7 +238,7 @@ export default function AdminCategoriesPage() {
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      style={{ backgroundColor: cat.color || '#FFC928' }}
+                      style={{ backgroundColor: cat.color || '#0084FF' }}
                       className="w-3.5 h-3.5 rounded-full shrink-0 shadow-sm"
                     />
                     <div>

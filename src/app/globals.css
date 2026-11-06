@@ -6,9 +6,10 @@
   :root {
     --bg-primary: #FFFFFF;
     --text-primary: #111111;
-    --accent-yellow: #FFC928;
-    --bg-secondary: #F5F5F5;
-    --border-color: #E5E5E5;
+    --accent-blue: #0084FF;
+    --accent-navy: #002B66;
+    --bg-secondary: #F8FAFC;
+    --border-color: #E2E8F0;
   }
 
   .dark {
@@ -74,7 +75,7 @@
 }
 
 .article-body blockquote {
-  border-left: 4px solid #FFC928;
+  border-left: 4px solid #0084FF;
   padding-left: 1.5rem;
   margin: 2rem 0;
   font-style: italic;
@@ -122,12 +123,12 @@
 
 .callout-box.info {
   background-color: #EFF6FF;
-  border-color: #3B82F6;
-  color: #1E3A8A;
+  border-color: #0084FF;
+  color: #002B66;
 }
 
 .dark .callout-box.info {
-  background-color: #1E293B;
+  background-color: #0B192C;
   color: #93C5FD;
 }
 
@@ -154,14 +155,14 @@
 }
 
 .callout-box.breaking {
-  background-color: #FEF3C7;
-  border-color: #FFC928;
-  color: #78350F;
+  background-color: #EFF6FF;
+  border-color: #0084FF;
+  color: #002B66;
 }
 
 .dark .callout-box.breaking {
-  background-color: #2A2412;
-  color: #FEE685;
+  background-color: #0B192C;
+  color: #38BDF8;
 }
 
 /* Breaking news scrolling ticker animation */

@@ -64,8 +64,8 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
       <div className="bg-[#111111] text-[#E0E0E0] text-xs py-1.5 px-4 sm:px-8 border-b border-[#222222]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <span className="hidden sm:inline font-medium text-[#FFC928] flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FFC928] animate-pulse"></span>
+            <span className="hidden sm:inline font-medium text-[#0084FF] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#0084FF] animate-pulse"></span>
               {currentDateStr}
             </span>
             <span className="hidden md:inline text-zinc-400">|</span>
@@ -82,7 +82,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
                 onClick={() => setLanguage('so')}
                 className={`px-2.5 py-0.5 rounded-full font-semibold transition-all ${
                   language === 'so'
-                    ? 'bg-[#FFC928] text-black shadow-sm'
+                    ? 'bg-[#0084FF] text-white shadow-sm'
                     : 'text-zinc-300 hover:text-white'
                 }`}
                 aria-label="Switch to Somali"
@@ -94,7 +94,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-0.5 rounded-full font-semibold transition-all ${
                   language === 'en'
-                    ? 'bg-[#FFC928] text-black shadow-sm'
+                    ? 'bg-[#0084FF] text-white shadow-sm'
                     : 'text-zinc-300 hover:text-white'
                 }`}
                 aria-label="Switch to English"
@@ -111,7 +111,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
               title={theme === 'dark' ? t.lightMode : t.darkMode}
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun className="w-3.5 h-3.5 text-[#FFC928]" /> : <Moon className="w-3.5 h-3.5 text-zinc-200" />}
+              {theme === 'dark' ? <Sun className="w-3.5 h-3.5 text-[#0084FF]" /> : <Moon className="w-3.5 h-3.5 text-zinc-200" />}
             </button>
 
 
@@ -131,7 +131,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-md border-2 border-[#FFC928] group-hover:scale-105 transition-transform shrink-0">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-md border-2 border-[#0084FF] group-hover:scale-105 transition-transform shrink-0">
                 <Image
                   src="/logo.png"
                   alt="Dailylink Africa"
@@ -143,7 +143,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl sm:text-3xl font-black tracking-tight leading-none text-[#111111] dark:text-white">
-                  DAILYLINK<span className="text-[#E5B420] ml-1">AFRICA</span>
+                  DAILYLINK<span className="text-[#0084FF] ml-1">AFRICA</span>
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 dark:text-zinc-400 mt-0.5">
                   {language === 'so' ? 'News | Insights | Africa | Beyond' : 'News | Insights | Africa | Beyond'}
@@ -162,8 +162,8 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
                     href={link.href}
                     className={`px-3.5 py-2 rounded-md font-semibold text-sm transition-colors flex items-center gap-1.5 ${
                       isActive
-                        ? 'text-black dark:text-[#FFC928] bg-zinc-100 dark:bg-zinc-800/60'
-                        : 'text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-800/40'
+                        ? 'text-white bg-[#0084FF] shadow-sm'
+                        : 'text-zinc-700 dark:text-zinc-300 hover:text-[#0084FF] dark:hover:text-[#0084FF] hover:bg-zinc-50 dark:hover:bg-zinc-800/40'
                     }`}
                   >
                     {IconComponent && <IconComponent className="w-4 h-4 opacity-75" />}
@@ -190,7 +190,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
                       <Link
                         key={cat.id}
                         href={`/category/${cat.slug}`}
-                        className="block px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-200 hover:bg-amber-50 dark:hover:bg-zinc-800 hover:text-amber-800 dark:hover:text-[#FFC928] transition-colors"
+                        className="block px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-[#0084FF] dark:hover:text-[#38BDF8] transition-colors"
                       >
                         {language === 'so' ? cat.nameSo : cat.nameEn}
                       </Link>
@@ -205,7 +205,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 p-2 sm:px-3 sm:py-2 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/60 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:border-[#FFC928] transition-all"
+                className="flex items-center gap-2 p-2 sm:px-3 sm:py-2 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/60 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:border-[#0084FF] transition-all"
                 aria-label="Open search"
               >
                 <Search className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
@@ -254,7 +254,7 @@ export default function Header({ categories = [] }: { categories?: CategoryItem[
                     key={cat.id}
                     href={`/category/${cat.slug}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-3 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-[#FFC928]"
+                    className="px-3 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-[#0084FF]"
                   >
                     {language === 'so' ? cat.nameSo : cat.nameEn}
                   </Link>

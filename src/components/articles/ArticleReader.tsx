@@ -134,8 +134,8 @@ export default function ArticleReader({
 
         {/* Translation Availability Notice */}
         {!hasCurrentLangContent && (
-          <div className="mb-6 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200 text-sm flex items-center gap-3 shadow-sm">
-            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-[#FFC928] shrink-0" />
+          <div className="mb-6 p-4 rounded-xl bg-blue-50 dark:bg-[#002B66]/40 border border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-200 text-sm flex items-center gap-3 shadow-sm">
+            <AlertCircle className="w-5 h-5 text-[#0084FF] shrink-0" />
             <div>
               <p className="font-semibold">{t.translationUnavailable}</p>
             </div>
@@ -147,7 +147,7 @@ export default function ArticleReader({
           {categoryName && (
             <Link
               href={`/category/${article.category?.slug}`}
-              className="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFC928] text-black shadow-sm mb-4"
+              className="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#0084FF] text-white shadow-sm mb-4 hover:bg-[#006ED6] transition-colors"
             >
               {categoryName}
             </Link>
@@ -192,7 +192,7 @@ export default function ArticleReader({
 
             <div className="flex items-center space-x-3">
               <span className="flex items-center gap-1">
-                <Clock className="w-4 h-4 text-[#FFC928]" />
+                <Clock className="w-4 h-4 text-[#0084FF]" />
                 {article.readTimeMin || 4} {t.minRead}
               </span>
 
@@ -236,12 +236,12 @@ export default function ArticleReader({
                 onClick={toggleBookmark}
                 className={`p-2 rounded-lg border transition-colors flex items-center gap-1.5 ${
                   bookmarked
-                    ? 'bg-[#FFC928] text-black border-[#FFC928]'
+                    ? 'bg-[#0084FF] text-white border-[#0084FF]'
                     : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700 hover:border-black'
                 }`}
                 title={bookmarked ? t.bookmarked : t.bookmark}
               >
-                <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-black' : ''}`} />
+                <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-white' : ''}`} />
               </button>
             </div>
           </div>
@@ -251,7 +251,7 @@ export default function ArticleReader({
         <div className="max-w-5xl my-8">
           <div className="relative w-full h-[320px] sm:h-[480px] md:h-[560px] rounded-2xl overflow-hidden shadow-lg bg-zinc-900">
             <Image
-              src={article.featuredImage}
+              src={article.featuredImage?.trim() ? article.featuredImage : '/logo.png'}
               alt={title}
               fill
               priority
@@ -260,7 +260,7 @@ export default function ArticleReader({
             />
           </div>
           {article.imageCaption && (
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2.5 px-2 italic border-l-2 border-[#FFC928]">
+            <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2.5 px-2 italic border-l-2 border-[#0084FF]">
               {article.imageCaption}
             </p>
           )}
@@ -320,7 +320,7 @@ export default function ArticleReader({
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-[#FFC928] hover:text-black transition-colors text-xs font-semibold ml-auto"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-[#0084FF] hover:text-white transition-colors text-xs font-semibold ml-auto"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Link2 className="w-3.5 h-3.5" />}
                 <span>{copied ? t.copiedToClipboard : 'Link'}</span>
@@ -344,7 +344,7 @@ export default function ArticleReader({
                     <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
                     {t.previousArticle}
                   </span>
-                  <p className="font-bold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-amber-800 dark:group-hover:text-[#FFC928] mt-2 line-clamp-2">
+                  <p className="font-bold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] mt-2 line-clamp-2">
                     {language === 'so' ? prevArticle.titleSo : prevArticle.titleEn}
                   </p>
                 </Link>
@@ -359,7 +359,7 @@ export default function ArticleReader({
                     {t.nextArticle}
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
-                  <p className="font-bold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-amber-800 dark:group-hover:text-[#FFC928] mt-2 line-clamp-2">
+                  <p className="font-bold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] mt-2 line-clamp-2">
                     {language === 'so' ? nextArticle.titleSo : nextArticle.titleEn}
                   </p>
                 </Link>
@@ -372,7 +372,7 @@ export default function ArticleReader({
             {/* Most Read Box */}
             <div className="rounded-2xl p-6 bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800">
               <div className="flex items-center gap-2 mb-4 pb-2 border-b border-zinc-200 dark:border-zinc-700">
-                <span className="w-2 h-5 bg-[#FFC928] rounded-sm"></span>
+                <span className="w-2 h-5 bg-[#0084FF] rounded-sm"></span>
                 <h3 className="font-black text-sm uppercase tracking-wider text-zinc-900 dark:text-white">
                   {t.trendingNews}
                 </h3>
@@ -388,7 +388,7 @@ export default function ArticleReader({
                           {idx + 1}
                         </span>
                         <div>
-                          <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-amber-800 dark:group-hover:text-[#FFC928] leading-snug line-clamp-2">
+                          <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] leading-snug line-clamp-2">
                             <Link href={`/articles/${art.slug}`}>{itemTitle}</Link>
                           </h4>
                           <span className="text-[11px] text-zinc-400 mt-1 block">
@@ -403,18 +403,18 @@ export default function ArticleReader({
             </div>
 
             {/* Newsletter Side Box */}
-            <div className="rounded-2xl p-6 bg-[#111111] text-white border-2 border-[#FFC928] shadow-md">
-              <h4 className="font-black text-lg text-[#FFC928] leading-tight">
-                DAILYLINK<span className="text-white ml-1">AFRICA</span>
+            <div className="rounded-2xl p-6 bg-[#002B66] text-white border-2 border-[#0084FF] shadow-md">
+              <h4 className="font-black text-lg text-white leading-tight">
+                DAILYLINK<span className="text-[#38BDF8] ml-1">AFRICA</span>
               </h4>
-              <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
+              <p className="text-xs text-blue-100 mt-2 leading-relaxed">
                 {language === 'so'
                   ? 'Ku xirnoow xogaha dhabta ah ee Geeska Afrika iyo caalamka maalin kasta.'
                   : 'Subscribe for verified Horn of Africa intelligence and editorial briefings.'}
               </p>
               <Link
                 href="/#latest"
-                className="mt-4 block w-full text-center bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-2 rounded-lg text-xs transition-colors"
+                className="mt-4 block w-full text-center bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-2 rounded-lg text-xs transition-colors shadow-sm"
               >
                 {t.subscribe}
               </Link>
@@ -426,7 +426,7 @@ export default function ArticleReader({
         {relatedArticles.length > 0 && (
           <section className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
             <div className="flex items-center gap-2 mb-8">
-              <span className="w-2.5 h-6 bg-[#FFC928] rounded-sm"></span>
+              <span className="w-2.5 h-6 bg-[#0084FF] rounded-sm"></span>
               <h2 className="text-2xl font-black uppercase tracking-tight text-zinc-900 dark:text-white">
                 {t.relatedNews}
               </h2>

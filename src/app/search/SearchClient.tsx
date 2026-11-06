@@ -60,7 +60,7 @@ export default function SearchClient({ categories }: { categories: any[] }) {
       {/* Header */}
       <div className="max-w-3xl mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <span className="w-2.5 h-7 bg-[#FFC928] rounded-sm"></span>
+          <span className="w-2.5 h-7 bg-[#0084FF] rounded-sm"></span>
           <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-900 dark:text-white">
             {t.search}
           </h1>
@@ -82,7 +82,7 @@ export default function SearchClient({ categories }: { categories: any[] }) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={t.searchPrompt}
-              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-base text-zinc-900 dark:text-white focus:outline-none focus:border-[#FFC928] shadow-sm"
+              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-zinc-50 dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-base text-zinc-900 dark:text-white focus:outline-none focus:border-[#0084FF] shadow-sm"
             />
           </div>
 
@@ -104,7 +104,7 @@ export default function SearchClient({ categories }: { categories: any[] }) {
 
           <button
             type="submit"
-            className="bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-md shrink-0"
+            className="bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-md shrink-0"
           >
             {t.search}
           </button>
@@ -123,7 +123,7 @@ export default function SearchClient({ categories }: { categories: any[] }) {
       {/* Results Grid */}
       {loading ? (
         <div className="text-center py-20 text-zinc-400">
-          <div className="w-8 h-8 border-4 border-[#FFC928] border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="w-8 h-8 border-4 border-[#0084FF] border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
           <span>{t.loading}</span>
         </div>
       ) : articles.length > 0 ? (

@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
         slug: computedSlug,
         descriptionSo: descriptionSo || null,
         descriptionEn: descriptionEn || null,
-        color: color || '#FFC928',
+        color: color || '#0084FF',
         order: Number(order) || 0,
         isActive: true,
       },

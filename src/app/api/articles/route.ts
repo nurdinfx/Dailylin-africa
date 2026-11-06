@@ -135,7 +135,7 @@ export async function POST(req: NextRequest) {
         contentSo: contentSo || '',
         contentEn: contentEn || '',
         categoryId,
-        featuredImage: featuredImage || 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80',
+        featuredImage: (featuredImage && featuredImage.trim()) || '/logo.png',
         imageCaption: imageCaption || null,
         status,
         isFeatured: Boolean(isFeatured),

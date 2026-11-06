@@ -106,7 +106,7 @@ async function main() {
       categoryId: categoryMap['horn-of-africa'],
       authorName: 'Guled Abdi Barre',
       authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-      featuredImage: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80',
+      featuredImage: '/logo.png',
       imageCaption: 'Leaders meet during the historic Regional Infrastructure and Economic Corridor Summit.',
       status: 'PUBLISHED',
       isFeatured: true,

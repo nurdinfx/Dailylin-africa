@@ -25,6 +25,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
       ? leadStory.category.nameSo
       : leadStory.category.nameEn
     : '';
+  const leadImage = leadStory.featuredImage && leadStory.featuredImage.trim() ? leadStory.featuredImage : '/logo.png';
 
   return (
     <section className="py-6 sm:py-8 border-b border-zinc-200 dark:border-zinc-800">
@@ -32,7 +33,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
         {/* Section Heading Tag */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-6 bg-[#FFC928] rounded-sm"></span>
+            <span className="w-2.5 h-6 bg-[#0084FF] rounded-sm"></span>
             <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-900 dark:text-white">
               {t.topStories}
             </h2>
@@ -51,7 +52,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
               className="relative w-full h-[320px] sm:h-[440px] rounded-2xl overflow-hidden block bg-zinc-900 shadow-md"
             >
               <Image
-                src={leadStory.featuredImage}
+                src={leadImage}
                 alt={leadTitle}
                 fill
                 priority
@@ -62,13 +63,13 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
 
               <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
                 {leadStory.isBreaking && (
-                  <span className="bg-black text-[#FFC928] text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md shadow-lg flex items-center gap-1.5 border border-[#FFC928]/40">
-                    <Flame className="w-3.5 h-3.5 text-[#FFC928]" />
+                  <span className="bg-[#002B66] text-[#38BDF8] text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md shadow-lg flex items-center gap-1.5 border border-[#0084FF]/40">
+                    <Flame className="w-3.5 h-3.5 text-[#38BDF8]" />
                     {t.breakingNews}
                   </span>
                 )}
-                <span className="bg-[#FFC928] text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md shadow-lg flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
+                <span className="bg-[#0084FF] text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md shadow-lg flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-white" />
                   {t.featuredStory}
                 </span>
               </div>
@@ -76,7 +77,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
               {/* Bottom Overlay Text on Mobile/Tablet */}
               <div className="absolute bottom-4 left-4 right-4 sm:hidden text-white z-10">
                 {leadCategory && (
-                  <span className="text-xs font-bold text-[#FFC928] uppercase tracking-wider mb-1 block">
+                  <span className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider mb-1 block">
                     {leadCategory}
                   </span>
                 )}
@@ -92,7 +93,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                 {leadCategory && (
                   <Link
                     href={`/category/${leadStory.category?.slug}`}
-                    className="font-bold text-amber-800 dark:text-[#FFC928] uppercase tracking-wider hover:underline"
+                    className="font-bold text-[#0084FF] dark:text-[#38BDF8] uppercase tracking-wider hover:underline"
                   >
                     {leadCategory}
                   </Link>
@@ -106,7 +107,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-zinc-900 dark:text-white leading-tight group-hover:text-amber-800 dark:group-hover:text-[#FFC928] transition-colors">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-zinc-900 dark:text-white leading-tight group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] transition-colors">
                 <Link href={`/articles/${leadStory.slug}`}>{leadTitle}</Link>
               </h3>
 
@@ -137,7 +138,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
 
                 <Link
                   href={`/articles/${leadStory.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-[#FFC928] hover:bg-[#E5B420] text-black px-4 py-2 rounded-lg transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-[#0084FF] hover:bg-[#006ED6] text-white px-4 py-2 rounded-lg transition-colors shadow-sm"
                 >
                   <span>{t.readMore}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -155,6 +156,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                   ? item.category.nameSo
                   : item.category.nameEn
                 : '';
+              const itemImage = item.featuredImage && item.featuredImage.trim() ? item.featuredImage : '/logo.png';
 
               return (
                 <article
@@ -170,7 +172,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                       {itemCategory && (
                         <Link
                           href={`/category/${item.category?.slug}`}
-                          className="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-[#FFC928] hover:underline"
+                          className="text-[11px] font-bold uppercase tracking-wider text-[#0084FF] dark:text-[#38BDF8] hover:underline"
                         >
                           {itemCategory}
                         </Link>
@@ -181,7 +183,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                       </span>
                     </div>
 
-                    <h4 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-amber-800 dark:group-hover:text-[#FFC928] transition-colors line-clamp-2">
+                    <h4 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-[#0084FF] dark:group-hover:text-[#38BDF8] transition-colors line-clamp-2">
                       <Link href={`/articles/${item.slug}`}>{itemTitle}</Link>
                     </h4>
 
@@ -200,7 +202,7 @@ export default function HeroSection({ leadStory, secondaryStories }: HeroSection
                     className="relative w-24 h-20 sm:w-28 sm:h-24 shrink-0 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-sm"
                   >
                     <Image
-                      src={item.featuredImage}
+                      src={itemImage}
                       alt={itemTitle}
                       fill
                       sizes="120px"

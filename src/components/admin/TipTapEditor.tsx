@@ -41,7 +41,7 @@ export default function TipTapEditor({
       LinkExtension.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: 'text-[#D97706] dark:text-[#FFC928] underline underline-offset-2',
+          class: 'text-[#0084FF] dark:text-[#38BDF8] underline underline-offset-2',
         },
       }),
       Placeholder.configure({
@@ -122,7 +122,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('bold') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('bold') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Bold"
         >
@@ -132,7 +132,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('italic') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('italic') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Italic"
         >
@@ -142,7 +142,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleUnderline().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('underline') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('underline') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Underline"
         >
@@ -156,7 +156,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('heading', { level: 1 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('heading', { level: 1 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Heading 1"
         >
@@ -166,7 +166,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('heading', { level: 2 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('heading', { level: 2 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Heading 2"
         >
@@ -176,7 +176,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('heading', { level: 3 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('heading', { level: 3 }) ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Heading 3"
         >
@@ -190,7 +190,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('bulletList') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('bulletList') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Bullet List"
         >
@@ -200,7 +200,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('orderedList') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('orderedList') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Numbered List"
         >
@@ -210,7 +210,7 @@ export default function TipTapEditor({
           type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('blockquote') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('blockquote') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Quote Block"
         >
@@ -224,7 +224,7 @@ export default function TipTapEditor({
           type="button"
           onClick={setLink}
           className={`p-1.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 ${
-            editor.isActive('link') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#FFC928]' : ''
+            editor.isActive('link') ? 'bg-zinc-200 dark:bg-zinc-700 text-[#0084FF] dark:text-[#38BDF8]' : ''
           }`}
           title="Insert Link"
         >
@@ -273,10 +273,10 @@ export default function TipTapEditor({
           <button
             type="button"
             onClick={() => insertCallout('breaking')}
-            className="p-1 px-2 rounded bg-yellow-200 dark:bg-yellow-900/60 text-yellow-900 dark:text-yellow-200 text-xs font-bold hover:opacity-80 flex items-center gap-1"
+            className="p-1 px-2 rounded bg-blue-100 dark:bg-blue-900/60 text-[#0084FF] dark:text-[#38BDF8] text-xs font-bold hover:opacity-80 flex items-center gap-1"
             title="Insert Breaking Callout"
           >
-            <Flame className="w-3 h-3 text-[#FFC928]" />
+            <Flame className="w-3 h-3 text-[#0084FF]" />
             <span>Breaking</span>
           </button>
         </div>
@@ -287,7 +287,7 @@ export default function TipTapEditor({
           onClick={() => setIsPreview(!isPreview)}
           className={`ml-auto flex items-center gap-1.5 px-3 py-1 rounded text-xs font-bold transition-colors ${
             isPreview
-              ? 'bg-[#FFC928] text-black shadow-sm'
+              ? 'bg-[#0084FF] text-white shadow-sm'
               : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-300'
           }`}
         >
@@ -299,7 +299,7 @@ export default function TipTapEditor({
       {/* Editor Content or Live Preview */}
       {isPreview ? (
         <div className="p-6 bg-white dark:bg-[#121212] min-h-[300px]">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#FFC928] block mb-4 pb-2 border-b border-zinc-200 dark:border-zinc-800">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#0084FF] dark:text-[#38BDF8] block mb-4 pb-2 border-b border-zinc-200 dark:border-zinc-800">
             Live Reader Preview Mode
           </span>
           <div

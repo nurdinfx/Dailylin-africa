@@ -135,7 +135,7 @@ export default function AdminMediaPage() {
 
           <div className="flex items-center gap-3">
             {/* Direct file upload */}
-            <label className="cursor-pointer inline-flex items-center gap-2 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md">
+            <label className="cursor-pointer inline-flex items-center gap-2 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md">
               <Upload className="w-4 h-4" />
               <span>{uploading ? 'Uploading...' : 'Upload File'}</span>
               <input
@@ -151,7 +151,7 @@ export default function AdminMediaPage() {
             <button
               type="button"
               onClick={() => setUrlModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-xs font-bold hover:border-[#FFC928] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#181818] border border-zinc-200 dark:border-zinc-800 text-xs font-bold hover:border-[#0084FF] transition-colors"
             >
               <LinkIcon className="w-3.5 h-3.5" />
               <span>Add from URL</span>
@@ -201,7 +201,7 @@ export default function AdminMediaPage() {
                   <button
                     type="button"
                     onClick={() => copyUrl(item.url, item.id)}
-                    className="flex items-center gap-1 text-[11px] font-bold text-[#D97706] dark:text-[#FFC928] hover:underline"
+                    className="flex items-center gap-1 text-[11px] font-bold text-[#0084FF] dark:text-[#38BDF8] hover:underline"
                   >
                     {copiedId === item.id ? (
                       <>
@@ -267,7 +267,7 @@ export default function AdminMediaPage() {
                 <div className="flex items-center gap-2 pt-2">
                   <button
                     type="submit"
-                    className="flex-1 bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-2.5 rounded-xl text-xs transition-colors"
+                    className="flex-1 bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-2.5 rounded-xl text-xs transition-colors"
                   >
                     Add to Library
                   </button>

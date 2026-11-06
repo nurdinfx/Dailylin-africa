@@ -25,7 +25,7 @@ export default function ContactClient() {
     <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
       <div>
         <div className="flex items-center gap-3 mb-2">
-          <span className="w-2.5 h-7 bg-[#FFC928] rounded-sm"></span>
+          <span className="w-2.5 h-7 bg-[#0084FF] rounded-sm"></span>
           <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-900 dark:text-white">
             {t.contactUs}
           </h1>
@@ -46,7 +46,7 @@ export default function ContactClient() {
 
           <div className="space-y-4 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
             <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[#FFC928] shrink-0 mt-0.5" />
+              <MapPin className="w-5 h-5 text-[#0084FF] shrink-0 mt-0.5" />
               <div>
                 <strong className="text-zinc-900 dark:text-white block">
                   {language === 'so' ? 'Xarunta Guud ee Wararka' : 'Headquarters & Newsroom'}
@@ -60,13 +60,13 @@ export default function ContactClient() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-[#FFC928] shrink-0" />
+              <Mail className="w-5 h-5 text-[#0084FF] shrink-0" />
               <span>newsroom@dailylink.africa</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-[#FFC928] shrink-0" />
-              <a href="tel:+252906592946" className="hover:text-[#FFC928] transition-colors">
+              <Phone className="w-5 h-5 text-[#0084FF] shrink-0" />
+              <a href="tel:+252906592946" className="hover:text-[#0084FF] transition-colors">
                 +252906 592 946
               </a>
             </div>
@@ -96,7 +96,7 @@ export default function ContactClient() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
               />
             </div>
 
@@ -109,7 +109,7 @@ export default function ContactClient() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
               />
             </div>
 
@@ -122,7 +122,7 @@ export default function ContactClient() {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
               />
             </div>
 
@@ -135,13 +135,13 @@ export default function ContactClient() {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#FFC928]"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-[#0084FF]"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-[#FFC928] hover:bg-[#E5B420] text-black font-bold py-3 rounded-xl text-xs transition-colors shadow-md flex items-center justify-center gap-2"
+              className="w-full bg-[#0084FF] hover:bg-[#006ED6] text-white font-bold py-3 rounded-xl text-xs transition-colors shadow-md flex items-center justify-center gap-2"
             >
               <Send className="w-4 h-4" />
               <span>{language === 'so' ? 'Dir Farriinta' : 'Submit to Newsroom'}</span>
